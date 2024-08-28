@@ -1,10 +1,11 @@
+const { defineConfig } = require("cypress");
 
 import { configureAllureAdapterPlugins } from '@mmisty/cypress-allure-adapter/plugins';
 
 import {addCucumberPreprocessorPlugin} from "@badeball/cypress-cucumber-preprocessor";
+// @ts-ignore
 import browserify from "@badeball/cypress-cucumber-preprocessor/browserify";
 const { downloadFile } = require("cypress-downloadfile/lib/addPlugin")
-const { defineConfig } = require("cypress");
 const readXlsx = require('cypress/support/read_xlsx')
 
 module.exports = defineConfig({
@@ -24,22 +25,9 @@ module.exports = defineConfig({
         defaultCommandTimeout: 10000,
         "video" : true,
         downloadsFolder: 'cypress/downloads',
-        // "reporter": "cypress-multi-reporters",
-        // "reporterOptions": {
-        //     "reporterEnabled": "mochawesome,mocha-junit-reporter",
-        //     "mochaJunitReporterReporterOptions": {
-        //         "mochaFile": "cypress/reports/report-[hash].xml",
-        //     },
-        //     "mochawesomeReporterOptions": {
-        //         "reportDir": "results/mochawesome",
-        //         "overwrite": false,
-        //         "html": true,
-        //         "json": true
-        //     }
-        // },
         chromeWebSecurity: false,
         // experimentalSessionAndOrigin: true,
-        pageLoadTimeout: 1000 * 120,
+        pageLoadTimeout: 2000,
         browsers: [
             {
                 name: 'chrome-macos',
