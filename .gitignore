@@ -35,3 +35,6 @@
 /config/master.key
 db/seeds.rb
 .idea/
+node_modules
+videos/
+cypress-e2e/allure-results/
