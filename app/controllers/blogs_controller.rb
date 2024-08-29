@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  include WithUser
   before_action :set_blog, only: %i[ show edit update destroy ]
 
   # GET /blogs or /blogs.json
