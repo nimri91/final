@@ -8,5 +8,5 @@ Given("User navigates to public marketing page", () => {
 });
 
 Then("I should see welcome message", () => {
-    cy.get(WelcomeLocators.WELCOME_HEADER).should('be.visible').click();
+    WelcomePO.getInstance().verifyWelcomeMessageExists()
 });
