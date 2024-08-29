@@ -38,3 +38,5 @@ db/seeds.rb
 node_modules
 videos/
 cypress-e2e/allure-results/
+
+db/seeds/tillawy.rb

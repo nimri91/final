@@ -3,3 +3,7 @@
 <h2>Welcome <%= @current_user.email %> To ZenHR Automation Graduation Project</h2>
 
 <%= button_to "Logout", session_path(@current_user.id), method: :delete %>
+
+<% if @current_user.admin? %>
+  <%= link_to "Manage Tags", tags_path %>
+<% end %>
