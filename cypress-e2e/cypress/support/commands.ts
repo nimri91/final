@@ -1,24 +1,3 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => {
-//     cy.log("Navigated_____________________________")
-//     cy.visit("http://zenhr.local:3000/")
-//     cy.visit("users/sign_in")
-//     cy.get("#user_login").type(email).should("have.value", email)
-//     cy.get("#user_password").type(password).should("have.value", password)
-//     cy.get("[type='submit']").click()
-//     cy.get(".logo-image").should("be.visible")
-//  }) 
 
 require('cypress-downloadfile/lib/downloadFileCommand');
 
@@ -33,11 +12,13 @@ Cypress.Commands.add('clickCheckBox', (locator: string, check: boolean) => {
 })
 
 // Handle uncaught exceptions to prevent test failures
+/*
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
     // failing the test
     return false
 })
+*/
 
 // Custom command to select an option from a dropdown
 Cypress.Commands.add('selectOption', (locator: string, value: string) => {
@@ -251,7 +232,6 @@ Cypress.Commands.add('checkMandatoryField', (locator: string, validationMessage?
 
 declare namespace Cypress {
   interface Chainable {
-    login(email: string, password: string): void
     clickCheckBox(locator: string, check: boolean): void
     selectOption(locator: string, value: string): void
     selectCheckBox(locator: string, value: string): void
@@ -264,15 +244,5 @@ declare namespace Cypress {
     element_exist(locator: string): boolean
     uploadFile(locator: string, file_name: string): void
     checkMandatoryField(locator: string, validationMessage?: string): void
-  }
-}
-
-// @ts-ignore
-declare global {
-  namespace Cypress {
-    interface Chainable {
-      login(email: string, password: string): void
-      clickCheckBox(locator: string, check: boolean): void
-    }
   }
 }
