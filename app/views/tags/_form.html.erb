@@ -13,10 +13,10 @@
 
   <div>
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, data: { e2e: 'newtagname' } %>
   </div>
 
   <div>
-    <%= form.submit %>
+  <%= form.submit 'Update Tag', data: { e2e: 'update' } %>
   </div>
 <% end %>

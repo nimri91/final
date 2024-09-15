@@ -12,7 +12,9 @@ class WelcomePO {
     private constructor() { }
 
     public navigate() {
+        
         cy.visit("/")
+        cy.wait(3000);
     }
 
     public verifyWelcomeMessageExists (){

@@ -4,8 +4,8 @@
 
 <div>
   <% if @current_user.id == @blog.user_id %>
-    <%= link_to "Edit this blog", edit_blog_path(@blog) %>
-    <%= button_to "Destroy this blog", @blog, method: :delete, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+    <%= link_to "Edit this blog", edit_blog_path(@blog), data: { e2e: 'editblog' } %>
+    <%= button_to "Destroy this blog", @blog, method: :delete, data: {turbo_method: :delete, e2e: 'distroyblog' } %>
   <% end %>
   <br/>
   <%= link_to "Back to blogs", blogs_path %>

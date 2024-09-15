@@ -3,8 +3,8 @@
 <%= render @tag %>
 
 <div>
-  <%= link_to "Edit this tag", edit_tag_path(@tag) %> |
-  <%= link_to "Back to tags", tags_path %>
+  <%= link_to "Edit this tag", edit_tag_path(@tag), data: { e2e: 'edittag' } %> |
+  <%= link_to "Back to tags", tags_path, data: { e2e: 'back' } %>
 
-  <%= button_to "Destroy this tag", @tag, method: :delete, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}%>
+  <%= button_to "Destroy this tag", @tag, method: :delete, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, data: { e2e: 'destroy' }%>
 </div>

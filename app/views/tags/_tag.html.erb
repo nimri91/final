@@ -1,7 +1,7 @@
 <div id="<%= dom_id tag %>">
   <p>
     <strong>Name:</strong>
-    <%= tag.name %>
+    <%= content_tag :span, tag.name, data: { e2e: 'tagtype' } %>
   </p>
 
 </div>

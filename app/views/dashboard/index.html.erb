@@ -1,12 +1,13 @@
 <h1>Dashboard</h1>
 
-<h2>Welcome <%= @current_user.email %> To ZenHR Automation Graduation Project</h2>
+<h2 data-e2e="welcomeMsg">Welcome <%= @current_user.email %> To ZenHR Automation Graduation Project</h2>
 
-<%= button_to "Logout", session_path(@current_user.id), method: :delete %>
+
+<%= button_to "Logout", session_path(@current_user.id), method: :delete, data: { e2e: 'logout' } %>
 
 <ul>
   <% if @current_user.admin? %>
-    <li><%= link_to "Manage Tags", tags_path %></li>
+    <li><%= link_to "Manage Tags", tags_path, data: { e2e: 'manage' } %></li>
   <% end %>
-  <li><%= link_to "Blogs", blogs_path %></li>
+  <li><%= link_to "Blogs", blogs_path, data: { e2e: 'blogs' } %></li>
 </ul>

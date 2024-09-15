@@ -1,11 +1,11 @@
 <%= link_to "Home", "/" %>
 <h1>Login Form</h1>
-<%= @status %>
+<span data-e2e="false"><%= @status %></span>
 <%= form_with url: sessions_path do |f| %>
   <% if @user.errors.any? %>
     <div>
       <ul>
-        <% @user.errors.full_messages.each do |message| %>
+        <% @user.errors.full_messages.each do |message|%>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -13,13 +13,13 @@
   <% end %>
   <div>
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, html_options= {'data-e2e': 'email'} %>
   </div>
   <div>
     <%= f.label :password %><br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, html_options= {'data-e2e': 'password'} %>
   </div>
   <p>
-    <%= f.submit "Login" %>
+    <%= f.submit "Login", html_options= {'data-e2e': 'loginbtn'} %>
   </p>
 <% end %>
